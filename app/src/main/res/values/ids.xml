@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="_motionBottomSheet" type="id"/>
+    <item name="_content" type="id"/>
+    <item name="_appBar" type="id"/>
+</resources>

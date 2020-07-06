@@ -14,10 +14,6 @@ class MainActivity : AppCompatActivity() {
         setSupportActionBar(toolbarId)
         supportActionBar?.setDisplayShowHomeEnabled(true)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
-
-        _btn.setOnClickListener {
-            "btn Click".logE()
-        }
     }
 
     override fun onDestroy() {

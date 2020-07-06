@@ -2,38 +2,97 @@
 <com.example.motion.motion.BottomSheetMotionView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:duplicateParentState="true"
-    app:isFullScreen="false"
-    app:showExpandIcon="true"
-    app:radius="8dp"
-    android:id="@+id/motion_view"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    app:layout_constraintBottom_toBottomOf="parent">
+    android:layout_height="match_parent">
 
     <com.google.android.material.appbar.AppBarLayout
-        android:id="@+id/appbarId"
-        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$Behavior"
+        android:id="@+id/_appbarIds"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <androidx.appcompat.widget.Toolbar
-            android:background="@color/colorAccent"
-            app:navigationIcon="@drawable/ic_baseline_close_24"
             android:id="@+id/toolbarId"
             android:layout_width="match_parent"
-            android:layout_height="?actionBarSize"/>
+            android:layout_height="?actionBarSize"
+            android:background="@color/colorAccent"
+            app:navigationIcon="@drawable/ic_baseline_close_24" />
+
     </com.google.android.material.appbar.AppBarLayout>
 
-    <FrameLayout
-        android:id="@+id/_contentId"
-        android:background="#ffab91"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    <com.example.motion.view.BottomSheetNestestScroll
+        app:layout_constraintTop_toBottomOf="@id/_appbarIds"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:id="@+id/_scollId"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/_btn"
-            android:layout_width="wrap_content"
+        android:layout_height="0dp">
+        <LinearLayout
+            android:id="@+id/a"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="click_me"/>
-    </FrameLayout>
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:gravity="center"
+                android:text="item" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:gravity="center"
+                android:text="item" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:gravity="center"
+                android:text="item" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:gravity="center"
+                android:text="item" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:gravity="center"
+                android:text="item" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:gravity="center"
+                android:text="item" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:gravity="center"
+                android:text="item" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:gravity="center"
+                android:text="item" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:gravity="center"
+                android:text="item" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:gravity="center"
+                android:text="item" />
+        </LinearLayout>
+    </com.example.motion.view.BottomSheetNestestScroll>
+
 </com.example.motion.motion.BottomSheetMotionView>

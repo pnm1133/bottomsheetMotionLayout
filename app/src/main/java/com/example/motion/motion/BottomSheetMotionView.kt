@@ -40,7 +40,7 @@ class BottomSheetMotionView @JvmOverloads constructor(context: Context, attrs: A
             values
         }
         val top = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,marginTop,resources.displayMetrics).toInt()
-        val margin = ConstraintLayout.LayoutParams(MarginLayoutParams.MATCH_PARENT,top)
+        val margin = LayoutParams(MarginLayoutParams.MATCH_PARENT,top)
         _spacerId?.layoutParams = margin
         field = value
     }
