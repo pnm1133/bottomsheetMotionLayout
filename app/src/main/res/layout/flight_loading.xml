@@ -5,6 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layoutDescription="@xml/flight_loading_scence">
+
+
     <androidx.appcompat.widget.AppCompatButton
         android:translationZ="1dp"
         android:layout_marginTop="72dp"
@@ -14,9 +16,20 @@
         android:text="stop"/>
 
     <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/_imvCenter"
+        android:layout_width="66dp"
+        android:layout_height="66dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/_guiCenterBottomId"
+        app:layout_constraintEnd_toStartOf="@+id/_guiCenterEndId"
+        app:layout_constraintStart_toEndOf="@id/_guiCenterStartId"
+        app:layout_constraintTop_toBottomOf="@+id/_guiCenterTopId"
+        app:srcCompat="@drawable/ic_halo" />
+
+    <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/_imvFlightId"
-        android:layout_width="24dp"
-        android:layout_height="24dp"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
         app:srcCompat="@drawable/ic_baseline_flight_24"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -34,14 +47,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.4" />
+        app:layout_constraintGuide_percent="0.3" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/_guiCenterEndId"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.6" />
+        app:layout_constraintGuide_percent="0.7" />
 
 
     <androidx.constraintlayout.widget.Guideline
@@ -52,10 +65,18 @@
         app:layout_constraintGuide_percent="0.3" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/_guiCenterBottomId"
+        android:id="@+id/_guiCenterXId"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.4" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/_guiCenterBottomId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.5" />
+
 
 </merge>
