@@ -164,7 +164,7 @@ abstract class BottomSheetBaseView @JvmOverloads constructor(
     }
 
     private fun reorderView()  {
-        _imvExpandId.translationZ = 1F
+        _imvExpandId.translationZ = 2F
         _ViewId.translationZ = 1F
         bottomSheetContentId.translationZ = 1F
     }

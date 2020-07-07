@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:motion="http://schemas.android.com/apk/res-auto">
+
+    <Transition
+        android:id="@+id/_transition_Flight_Start"
+        motion:autoTransition="animateToEnd"
+        motion:constraintSetEnd="@+id/_setCenter_Flight"
+        motion:constraintSetStart="@+id/_setStart_Flight"
+        motion:duration="3000"
+        motion:motionInterpolator="linear"
+        motion:pathMotionArc="flip">
+        <KeyFrameSet>
+            <KeyPosition
+                motion:drawPath="path"
+                motion:framePosition="25"
+                motion:keyPositionType="parentRelative"
+                motion:motionTarget="@id/_imvFlightId"
+                motion:pathMotionArc="startHorizontal"
+                motion:percentX="0.4"
+                motion:percentY="0.5" />
+            <KeyAttribute
+                android:rotation="0"
+                motion:framePosition="0"
+                motion:motionTarget="@+id/_imvFlightId" />
+            <!--<KeyAttribute
+                motion:motionTarget="@+id/_imvFlightId"
+                motion:framePosition="50"
+                android:rotation="-90" />-->
+            <KeyAttribute
+                android:rotation="0"
+                motion:framePosition="25"
+                motion:motionTarget="@+id/_imvFlightId" />
+            <KeyPosition
+                motion:framePosition="60"
+                motion:keyPositionType="parentRelative"
+                motion:motionTarget="@+id/_imvFlightId"
+                motion:pathMotionArc="startVertical"
+                motion:percentX="0.61"
+                motion:percentY="0.35" />
+            <KeyPosition
+                motion:framePosition="70"
+                motion:keyPositionType="parentRelative"
+                motion:motionTarget="@+id/_imvFlightId"
+                motion:pathMotionArc="startHorizontal"
+                motion:percentX="0.5"
+                motion:percentY="0.3" />
+            <KeyPosition
+                motion:framePosition="80"
+                motion:keyPositionType="parentRelative"
+                motion:motionTarget="@+id/_imvFlightId"
+                motion:pathMotionArc="startVertical"
+                motion:percentX="0.4"
+                motion:percentY="0.35" />
+            <KeyPosition
+                motion:framePosition="90"
+                motion:keyPositionType="parentRelative"
+                motion:motionTarget="@+id/_imvFlightId"
+                motion:pathMotionArc="startHorizontal"
+                motion:percentX="0.5"
+                motion:percentY="0.4" />
+            <KeyAttribute
+                android:rotation="-90"
+                motion:framePosition="60"
+                motion:motionTarget="@+id/_imvFlightId" />
+            <KeyAttribute
+                android:rotation="-180"
+                motion:framePosition="70"
+                motion:motionTarget="@+id/_imvFlightId" />
+            <KeyAttribute
+                android:rotation="-270"
+                motion:framePosition="80"
+                motion:motionTarget="@+id/_imvFlightId" />
+            <KeyAttribute
+                android:rotation="-360"
+                motion:framePosition="90"
+                motion:motionTarget="@+id/_imvFlightId" />
+            <KeyAttribute
+                motion:motionTarget="@+id/_imvFlightId"
+                motion:framePosition="100"
+                android:rotation="-450" />
+        </KeyFrameSet>
+    </Transition>
+
+    <Transition
+        android:id="@+id/_transition_Flight_Start_Around"
+        motion:autoTransition="animateToEnd"
+        motion:constraintSetEnd="@+id/_setCenter_Flight"
+        motion:constraintSetStart="@+id/_setCenter_Flight"
+        motion:duration="1500"
+        motion:motionInterpolator="linear"
+        motion:pathMotionArc="startVertical">
+        <KeyFrameSet>
+            <KeyPosition
+                motion:curveFit="spline"
+                motion:framePosition="50"
+                motion:keyPositionType="parentRelative"
+                motion:motionTarget="@+id/_imvFlightId"
+                motion:pathMotionArc="startVertical"
+                motion:percentX="0.4"
+                motion:percentY="0.35" />
+            <KeyPosition
+                motion:curveFit="spline"
+                motion:framePosition="25"
+                motion:keyPositionType="parentRelative"
+                motion:motionTarget="@+id/_imvFlightId"
+                motion:pathMotionArc="startHorizontal"
+                motion:percentX="0.5"
+                motion:percentY="0.3" />
+            <KeyPosition
+                motion:framePosition="75"
+                motion:keyPositionType="parentRelative"
+                motion:motionTarget="@+id/_imvFlightId"
+                motion:pathMotionArc="startHorizontal"
+                motion:percentX="0.5"
+                motion:percentY="0.4" />
+            <KeyAttribute
+                android:rotation="-180"
+                motion:framePosition="25"
+                motion:motionTarget="@+id/_imvFlightId" />
+            <KeyAttribute
+                android:rotation="-270"
+                motion:framePosition="50"
+                motion:motionTarget="@+id/_imvFlightId" />
+            <KeyAttribute
+                android:rotation="-360"
+                motion:framePosition="75"
+                motion:motionTarget="@+id/_imvFlightId" />
+            <KeyAttribute
+                android:rotation="-90"
+                motion:framePosition="0"
+                motion:motionTarget="@+id/_imvFlightId" />
+            <KeyAttribute
+                android:rotation="-450"
+                motion:framePosition="100"
+                motion:motionTarget="@+id/_imvFlightId" />
+        </KeyFrameSet>
+    </Transition>
+
+    <ConstraintSet android:id="@+id/_setStart_Flight">
+
+        <Constraint
+            android:id="@+id/_imvFlightId"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toTopOf="parent">
+            <PropertySet android:visibility="visible" />
+        </Constraint>
+
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/_setCenter_Flight">
+
+        <Constraint
+            android:id="@+id/_imvFlightId"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            motion:layout_constraintBottom_toBottomOf="@+id/_guiCenterBottomId"
+            motion:layout_constraintEnd_toStartOf="@+id/_guiCenterEndId"
+            motion:layout_constraintStart_toEndOf="@+id/_guiCenterEndId"
+            motion:layout_constraintTop_toTopOf="@+id/_guiCenterTopId">
+            <PropertySet android:visibility="visible" />
+        </Constraint>
+
+    </ConstraintSet>
+
+
+    <ConstraintSet android:id="@+id/_setAround_Flight">
+
+        <Constraint
+            android:id="@+id/_imvFlightId"
+            motion:layout_constraintBottom_toBottomOf="@+id/_guiCenterBottomId"
+            motion:layout_constraintEnd_toStartOf="@+id/_guiCenterEndId"
+            motion:layout_constraintTop_toTopOf="@+id/_guiCenterTopId">
+            <PropertySet android:visibility="visible" />
+        </Constraint>
+
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/_setEnd_Flight">
+
+    </ConstraintSet>
+</MotionScene>

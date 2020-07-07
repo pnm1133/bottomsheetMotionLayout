@@ -59,5 +59,10 @@ class BottomSheetMotionView @JvmOverloads constructor(context: Context, attrs: A
         isShowExpandIcon = attributes.getBoolean(R.styleable.BottomSheetMotionView_showExpandIcon, true)
         attributes.recycle()
     }
+
+    override fun onFinishInflate() {
+        radiusBottomSheet = resources.getDimension(R.dimen.normal_size)
+        super.onFinishInflate()
+    }
 }
 
