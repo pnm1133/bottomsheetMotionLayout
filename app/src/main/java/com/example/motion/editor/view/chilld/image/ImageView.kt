@@ -1,7 +1,7 @@
-package com.example.motion.editor.view
+package com.example.motion.editor.view.chilld.image
 
 import android.graphics.Bitmap
-import com.example.motion.editor.model.ImageModel
+import com.example.motion.editor.view.chilld.EditorViewBase
 
 interface ImageView : EditorViewBase {
 

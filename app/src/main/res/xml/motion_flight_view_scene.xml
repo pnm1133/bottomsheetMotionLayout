@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:motion="http://schemas.android.com/apk/res-auto">
+
+    <Transition
+        android:id="@+id/_transitionToEndFlight"
+        motion:constraintSetEnd="@+id/_setFlightToEnd"
+        motion:constraintSetStart="@+id/_setFlightStart"
+        motion:duration="500"
+        motion:motionInterpolator="easeIn">
+    </Transition>
+
+    <Transition
+        android:id="@+id/_transitionHideFlight"
+        motion:constraintSetEnd="@+id/_setHideFlightToEnd"
+        motion:constraintSetStart="@+id/_setFlightToEnd"
+        motion:duration="500"
+        motion:autoTransition="animateToEnd"
+        motion:motionInterpolator="linear">
+    </Transition>
+
+    <Transition
+        android:id="@+id/_transitionToCenterFlight"
+        motion:constraintSetEnd="@+id/_setFlightToCenter"
+        motion:constraintSetStart="@+id/_setHideFlightToEnd"
+        motion:duration="500"
+        motion:autoTransition="animateToEnd"
+        motion:motionInterpolator="easeOut">
+        <KeyFrameSet>
+            <KeyAttribute
+                motion:framePosition="80"
+                motion:motionTarget="@+id/_imvFlightStartId"
+                android:scaleY="0.9"
+                android:scaleX="1" />
+        </KeyFrameSet>
+    </Transition>
+
+    <ConstraintSet android:id="@+id/_setFlightStart">
+        <Constraint android:id="@+id/_imvFlightId"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_margin="@dimen/lage_size"
+            motion:layout_constraintDimensionRatio="1:1"
+            motion:layout_constraintBottom_toTopOf="@+id/_guiBottomId"
+            motion:layout_constraintTop_toBottomOf="@+id/_guiTopId"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintStart_toStartOf="parent" />
+        <Constraint
+            android:id="@+id/_imvFlightStartId"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintDimensionRatio="1:1"
+            motion:layout_constraintEnd_toStartOf="parent"
+            motion:layout_constraintBottom_toTopOf="@+id/_guiBottomId"
+            motion:layout_constraintTop_toBottomOf="@+id/_guiTopId" />
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/_setFlightToEnd">
+        <Constraint android:id="@+id/_imvFlightId"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            motion:layout_constraintDimensionRatio="1:1"
+            motion:layout_constraintBottom_toTopOf="@+id/_guiBottomId"
+            motion:layout_constraintTop_toBottomOf="@+id/_guiTopId"
+            motion:layout_constraintStart_toEndOf="parent"
+            />
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/_setHideFlightToEnd"
+        motion:deriveConstraintsFrom="@+id/_setFlightToEnd">
+        <Constraint android:id="@+id/_imvFlightHideId"
+            android:layout_width="@dimen/ic_flight_hide_size"
+            android:layout_height="@dimen/ic_flight_hide_size"
+            motion:layout_constraintEnd_toStartOf="parent"
+            motion:layout_constraintBottom_toTopOf="@+id/_guiBottomId"
+            motion:layout_constraintTop_toBottomOf="@+id/_guiTopId"
+            />
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/_setFlightToCenter"
+        motion:deriveConstraintsFrom="@+id/_setHideFlightToEnd">
+        <Constraint android:id="@+id/_imvFlightStartId"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            motion:layout_constraintDimensionRatio="1:1"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintBottom_toTopOf="@+id/_guiBottomId"
+            motion:layout_constraintTop_toBottomOf="@+id/_guiTopId"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            />
+    </ConstraintSet>
+</MotionScene>

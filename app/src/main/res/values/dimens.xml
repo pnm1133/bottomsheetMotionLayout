@@ -2,6 +2,14 @@
 <resources>
     <dimen name="small_size">8dp</dimen>
     <dimen name="normal_size">16dp</dimen>
-    <dimen name="nothing_size">16dp</dimen>
+    <dimen name="lage_size">48dp</dimen>
+    <dimen name="nothing_size">0dp</dimen>
     <dimen name="margin_top_bottom_sheet">40dp</dimen>
+    <!--editor-->
+    <dimen name="imageEditorSize">72dp</dimen>
+    <dimen name="ic_flight_size">72dp</dimen>
+    <dimen name="ic_flight_hide_size">48dp</dimen>
+
+    <dimen name="dot_size">16dp</dimen>
+    <dimen name="dot_widthSize">100dp</dimen>
 </resources>

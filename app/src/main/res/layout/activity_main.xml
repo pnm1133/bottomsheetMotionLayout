@@ -1,4 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--<com.example.motion.editor.view.editor.EditorViewGroup
+    android:id="@+id/_editor"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+</com.example.motion.editor.view.editor.EditorViewGroup>-->
 <LinearLayout
     android:orientation="vertical"
     xmlns:android="http://schemas.android.com/apk/res/android"
@@ -20,12 +27,12 @@
             android:background="@color/colorAccent"
             app:navigationIcon="@drawable/ic_baseline_close_24" />
     </com.google.android.material.appbar.AppBarLayout>
-    <com.example.motion.loading.FlightLoadingView
-        android:id="@+id/_loadingFlightId"
-        android:translationZ="1dp"
+    <!--<com.example.motion.loading.SplashFlightView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-    </com.example.motion.loading.FlightLoadingView>
+        android:layout_height="match_parent"/>-->
+    <com.example.motion.motion.IndicatorMotionView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
 </LinearLayout>
 
 

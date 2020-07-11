@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.motion.widget.MotionLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/_motionFlightDetail"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layoutDescription="@xml/motion_flight_view_scene">
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/_guiTopId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.2" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/_guiBottomId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.8" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/_imvFlightId"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintBottom_toTopOf="@+id/_guiBottomId"
+        app:layout_constraintTop_toBottomOf="@+id/_guiTopId"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/ic_baseline_flight_24" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/_imvFlightStartId"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/_guiBottomId"
+        app:layout_constraintTop_toBottomOf="@+id/_guiTopId"
+        app:srcCompat="@drawable/ic_baseline_flight_24" />
+
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/_imvFlightHideId"
+        android:layout_width="@dimen/ic_flight_hide_size"
+        android:layout_height="@dimen/ic_flight_hide_size"
+        app:layout_constraintStart_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/_guiBottomId"
+        app:layout_constraintTop_toBottomOf="@+id/_guiTopId"
+        app:srcCompat="@drawable/ic_baseline_flight_24_hide" />
+
+</androidx.constraintlayout.motion.widget.MotionLayout>

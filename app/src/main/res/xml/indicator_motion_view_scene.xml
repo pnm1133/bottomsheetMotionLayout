@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:motion="http://schemas.android.com/apk/res-auto">
+
+    <Transition
+        android:id="@+id/_transitionDot1"
+        motion:constraintSetEnd="@+id/_setDot2"
+        motion:constraintSetStart="@+id/_setDot1"
+        motion:duration="500"
+        motion:autoTransition="animateToEnd"
+        motion:motionInterpolator="easeOut">
+
+    </Transition>
+
+    <Transition
+        android:id="@+id/_transitionDot2"
+        motion:constraintSetEnd="@+id/_setDot3"
+        motion:constraintSetStart="@+id/_setDot2"
+        motion:duration="500"
+        motion:autoTransition="animateToEnd"
+        motion:motionInterpolator="easeOut">
+
+    </Transition>
+
+    <ConstraintSet android:id="@+id/_setDot1">
+        <Constraint android:id="@+id/_idDot"
+            android:layout_width="@dimen/dot_widthSize"
+            android:layout_height="@dimen/dot_size"
+            android:layout_marginEnd="@dimen/dot_size"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintEnd_toStartOf="@+id/_idDot2"
+            motion:layout_constraintStart_toStartOf="@+id/guideline2"
+            motion:layout_constraintTop_toTopOf="parent">
+        </Constraint>
+
+        <Constraint android:id="@+id/_idDot2"
+            android:layout_width="@dimen/dot_size"
+            android:layout_height="@dimen/dot_size"
+            motion:layout_constraintBottom_toBottomOf="@+id/guideline"
+            motion:layout_constraintEnd_toStartOf="@+id/guideline3"
+            motion:layout_constraintStart_toStartOf="@+id/guideline3"
+            motion:layout_constraintTop_toTopOf="@+id/guideline">
+        </Constraint>
+
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/_setDot2"
+        motion:deriveConstraintsFrom="@+id/_setDot1">
+        <Constraint android:id="@+id/_idDot"
+            android:layout_width="@dimen/dot_size"
+            android:layout_height="@dimen/dot_size"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintEnd_toStartOf="@+id/guideline2"
+            motion:layout_constraintStart_toStartOf="@+id/guideline2"
+            motion:layout_constraintTop_toTopOf="parent">
+            <CustomAttribute motion:attributeName="cardCornerRadius"
+                motion:customDimension="600dp" />
+        </Constraint>
+
+        <Constraint android:id="@+id/_idDot2"
+            android:layout_width="@dimen/dot_widthSize"
+            android:layout_height="@dimen/dot_size"
+            motion:layout_constraintBottom_toBottomOf="@+id/guideline"
+            motion:layout_constraintEnd_toStartOf="@+id/guideline3"
+            motion:layout_constraintStart_toStartOf="@+id/guideline3"
+            motion:layout_constraintTop_toTopOf="@+id/guideline">
+            <CustomAttribute motion:attributeName="cardCornerRadius"
+                motion:customDimension="10dp" />
+        </Constraint>
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/_setDot3"
+        motion:deriveConstraintsFrom="@id/_setDot2">
+        <Constraint android:id="@+id/_idDot2"
+            android:layout_width="@dimen/dot_size"
+            android:layout_height="@dimen/dot_size"
+            motion:layout_constraintBottom_toBottomOf="@+id/guideline"
+            motion:layout_constraintEnd_toStartOf="@+id/guideline3"
+            motion:layout_constraintStart_toStartOf="@+id/guideline3"
+            motion:layout_constraintTop_toTopOf="@+id/guideline">
+            <CustomAttribute motion:attributeName="cardCornerRadius"
+                motion:customDimension="600dp" />
+        </Constraint>
+
+        <Constraint android:id="@+id/_idDot3"
+            android:layout_width="@dimen/dot_widthSize"
+            android:layout_height="@dimen/dot_size"
+            motion:layout_constraintBottom_toBottomOf="@+id/guideline"
+            motion:layout_constraintEnd_toStartOf="@+id/guideline4"
+            motion:layout_constraintStart_toStartOf="@+id/guideline4"
+            motion:layout_constraintTop_toTopOf="@+id/guideline">
+            <CustomAttribute motion:attributeName="cardCornerRadius"
+                motion:customDimension="10dp" />
+        </Constraint>
+    </ConstraintSet>
+</MotionScene>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.motion.widget.MotionLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:id="@+id/_motion"
+    app:layoutDescription="@xml/splash_flight_view_scene"
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/_tvStartIdId"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:text="HN"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:layout_marginEnd="@dimen/normal_size"
+        android:textColor="#0d47a1"
+        app:layout_constraintBottom_toBottomOf="@+id/_imgMotion"
+        app:layout_constraintEnd_toStartOf="@+id/_imgMotion"
+        app:layout_constraintTop_toTopOf="@+id/_imgMotion" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/_imgMotion"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintDimensionRatio="1:1"
+        app:cardCornerRadius="600dp"
+        app:layout_constraintBottom_toTopOf="@+id/_guiBottomId"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:cardBackgroundColor="#e0e0e0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/_guiTopId">
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_gravity="center"
+            app:srcCompat="@drawable/ic_halo"
+            android:alpha="0.3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+        <com.example.motion.loading.MotionFlightView
+            android:translationZ="1dp"
+            android:id="@+id/_splashId"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/_tvEndId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="HCM"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:layout_marginStart="@dimen/normal_size"
+        android:textSize="16sp"
+        android:textColor="#0d47a1"
+        app:layout_constraintBottom_toBottomOf="@+id/_imgMotion"
+        app:layout_constraintStart_toEndOf="@+id/_imgMotion"
+        app:layout_constraintTop_toTopOf="@+id/_imgMotion" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:orientation="horizontal"
+        android:id="@+id/_guiTopId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintGuide_percent="0.4"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:orientation="horizontal"
+        android:id="@+id/_guiBottomId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintGuide_percent="0.7"/>
+
+</androidx.constraintlayout.motion.widget.MotionLayout>

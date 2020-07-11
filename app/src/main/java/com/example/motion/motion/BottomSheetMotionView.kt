@@ -8,6 +8,7 @@ import android.view.ViewTreeObserver
 import android.widget.FrameLayout
 import androidx.annotation.Dimension
 import androidx.annotation.DrawableRes
+import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.motion.widget.MotionLayout
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.coordinatorlayout.widget.CoordinatorLayout
@@ -15,13 +16,17 @@ import androidx.core.app.ActivityCompat
 import androidx.core.view.MarginLayoutParamsCompat
 import androidx.core.view.isVisible
 import androidx.core.view.marginTop
+import androidx.fragment.app.Fragment
 import com.example.motion.R
+import com.example.motion.utils.JobUtil
 import com.example.motion.utils.isElevation
 import com.example.motion.utils.logE
 import com.example.motion.utils.ofType
 import com.google.android.material.appbar.AppBarLayout
 import kotlinx.android.synthetic.*
 import kotlinx.android.synthetic.main.bottom_sheet_drawer.view.*
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
 
 class BottomSheetMotionView @JvmOverloads constructor(context: Context, attrs: AttributeSet, dif: Int = 0) : BottomSheetBaseView(context, attrs, dif) {
 
@@ -63,6 +68,30 @@ class BottomSheetMotionView @JvmOverloads constructor(context: Context, attrs: A
     override fun onFinishInflate() {
         radiusBottomSheet = resources.getDimension(R.dimen.normal_size)
         super.onFinishInflate()
+    }
+
+    fun haftExpand(){
+        "haftExpand".logE()
+        JobUtil.doJob(Dispatchers.Main){
+            delay(100)
+            setTransition(R.id._transitionBottomGone)
+            transitionToEnd()
+        }
+    }
+
+    fun expand(){
+        "haftExpand".logE()
+        JobUtil.doJob(Dispatchers.Main){
+            delay(100)
+            setTransition(R.id._transitionBottomHaftExpand)
+            transitionToEnd()
+        }
+    }
+
+    fun inflateFr(fr : Fragment){
+        kotlin.runCatching {
+            (context as AppCompatActivity?)?.supportFragmentManager?.beginTransaction()?.add(R.id._frContentId,fr)?.commit()
+        }
     }
 }
 

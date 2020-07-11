@@ -27,6 +27,7 @@
     <declare-styleable name="BottomSheetMotionView">
         <attr name="radius" format="dimension"/>
         <attr name="showExpandIcon" format="boolean"/>
+        <attr name="haftExpandHeight" format="dimension"/>
         <attr name="isFullScreen" format="boolean"/>
     </declare-styleable>
 

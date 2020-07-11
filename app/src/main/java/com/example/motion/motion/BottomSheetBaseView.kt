@@ -12,6 +12,7 @@ import android.widget.FrameLayout
 import android.widget.ScrollView
 import androidx.constraintlayout.motion.widget.MotionLayout
 import androidx.coordinatorlayout.widget.CoordinatorLayout
+import androidx.core.app.ActivityCompat
 import androidx.core.view.isVisible
 import androidx.recyclerview.widget.RecyclerView
 import com.example.motion.R
@@ -33,20 +34,13 @@ abstract class BottomSheetBaseView @JvmOverloads constructor(
     dif: Int = 0
 ) : MotionLayout(context, attr, dif) {
 
-
-    enum class State {
-        COLLAPSE,
-        HALF,
-        EXPAND
-    }
-
     private var appbar: AppBarLayout? = null
     private var scrollView : BottomSheetNestestScroll? = null
 
     init {
         layoutParams = FrameLayout.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT)
         View.inflate(context, R.layout.bottom_sheet_drawer, this@BottomSheetBaseView)
-        id = R.id._motionBottomSheet
+        setBackgroundColor(ActivityCompat.getColor(context,R.color.colorBlur))
     }
 
     var isStop = true
@@ -87,7 +81,7 @@ abstract class BottomSheetBaseView @JvmOverloads constructor(
         delay(100)
         loadLayoutDescription(R.xml.bottom_sheet_scene)
         setTransition(R.id._transitionBottomGone)
-        setDebugMode(3)
+        //setDebugMode(3)
     }
 
     private fun initLayout() {
